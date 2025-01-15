@@ -1,0 +1,56 @@
+body, html{
+    padding: 0;
+    margin: 0;
+}
+
+.master{
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+.zone{
+    border:2px solid #000;
+    background: #3e7;
+    width: 90%;
+    height: 90%;
+}
+
+.zone:hover{
+    opacity: 80%;
+}
+
+.container{
+    margin: auto;
+    background: #222;
+    width: 50dvw;
+    height: 50dvw;
+    max-width: 300px;
+    max-height: 300px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.playerOne{
+    background: url("circl.webp") center / cover no-repeat #3f7;
+}
+
+.playerTwo{
+    background: url("tahce.png") center / cover no-repeat #3f7;
+}
+
+.player{
+    position: absolute;
+    text-align: center;
+    width: 100dvw;
+    top: 0;
+    color: #fff;
+    font-size: 50px;
+    margin: 0 0 30px 0;
+}
