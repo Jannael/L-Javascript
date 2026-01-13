@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+:root{
+    --theme: #ddd;
+    --border: #000;
+}
+body{
+    background: var(--theme);
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+    transition: background .5s ease;
+}
+.div{
+    width: clamp(100px, 150px, 300px);
+    background: var(--theme);
+    height: clamp(50px, 60px, 70px);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    padding: 5px;
+    cursor: pointer;
+}
+.button{
+    width: clamp(40px, 50px, 60px);
+    height: clamp(40px, 50px, 60px);
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: .5s ease;
+    background: var(--theme);
+    left: 0;
+    cursor: pointer;
+}
+
+.button_active{
+    left: 65%;
+}

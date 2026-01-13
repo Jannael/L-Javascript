@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: #222;
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+}
+
+
+.container{
+    background: #dfdfdf;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    transition: height .5s ease;
+}
+
+
+.search_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dfdfdf;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 5px;
+    z-index: 10;
+}
+.icon {
+    font-size: clamp(1.3rem, 1.4rem, 1.5rem);
+}
+.search_container_input {
+    background: transparent;
+    padding: 10px 5px;
+}
+.search_container_input::placeholder{
+    font-size: clamp(0.7rem, 1rem, 1.3rem);
+}
+.search_container_search {
+    cursor: pointer;
+}
+
+
+.image_time{
+    position: static;
+    width: clamp(100px, 150px, 170px);
+    transition: width .5s ease, opacity .5s ease;
+}
+
+
+.temperature {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    transition: font-size .5s ease, opacity .5s ease;
+}
+.temperature_p {
+    font-size: clamp(2em, 4em, 6em);
+    display: flex;
+}
+.temperature_p span{
+    font-size: clamp(0.5em, 0.6em, .7em);
+    font-weight: 100;
+}
+.wheather {
+    font-size: clamp(1.2em, 1.3em, 1.4em);
+}
+
+
+.data {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
+    font-size: 1rem;
+    transition: font-size .5 ease, opacity .5s ease;
+}
+.humidity {
+    display: flex;
+    align-items: center;
+}
+.humidity i{
+    margin-right: 10px;
+    font-size: clamp(1.3em, 1.4em, 1.5em);
+}
+.humidity_txt {
+    font-size: 0.8em;
+}
+.humidity_percentage {
+}
+
+.windSpeed {
+    display: flex;
+    align-items: center;
+}
+.windSpeed i{
+    margin-right: 10px;
+    font-size: clamp(1.3em, 1.4em, 1.5em);
+}
+.windSpeed_txt{
+    font-size: 0.8em;
+}
+.windSpeed_speed {
+}
+
+.not-found{
+    font-size: 0rem;
+    transition: font-size .5s ease;
+}
+
+.none{
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 0;
+    opacity: 0;
+}

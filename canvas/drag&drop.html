@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            display: grid;
+            place-content: center;
+        }
+        canvas{
+            width: 100%;
+            height: 100dvh;
+            background: #222;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let firstSquareX = 100;
+        let firstSquareY = 100;
+        let heightFirstSquare = 100;
+        let widthFirstSquare = 100;
+
+        let secondSquareX = 300;
+        let secondSquareY = 300;
+        let heightSecondSquare = 300;
+        let widthSecondSquare = 300;
+
+        let isDragging = false;
+
+        ctx.fillStyle = '#fff';
+        ctx.rect(firstSquareX, firstSquareY, widthFirstSquare, heightFirstSquare);
+        ctx.fill();
+        ctx.rect(secondSquareX, secondSquareY, widthSecondSquare, heightSecondSquare);
+        ctx.fill();
+        
+        canvas.addEventListener('mousedown', e => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            if((x >= secondSquareX && x <= (secondSquareX + widthSecondSquare))
+            &&(y >= secondSquareY && y <= (secondSquareY + heightSecondSquare))){
+                isDragging = true;
+            }else if((x >= firstSquareX && x <= (firstSquareX + widthFirstSquare))
+            &&(y >= firstSquareY && y <= (firstSquareY + heightFirstSquare))){
+                isDragging = true;
+            }
+        })
+        canvas.addEventListener('mousemove', e => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const draw = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                ctx.beginPath();
+                ctx.rect(firstSquareX, firstSquareY, widthFirstSquare, heightFirstSquare);
+                ctx.fill();
+                ctx.closePath();
+
+                ctx.beginPath();
+                ctx.rect(secondSquareX, secondSquareY, widthSecondSquare, heightSecondSquare);
+                ctx.fill();
+                ctx.closePath();
+            }
+            
+            if(isDragging){
+                
+                if((x >= secondSquareX && x <= (secondSquareX + widthSecondSquare))
+                &&(y >= secondSquareY && y <= (secondSquareY + heightSecondSquare))){
+                    const movementX = x- secondSquareX - widthSecondSquare / 2;
+                    const movementY = y - secondSquareY - heightSecondSquare / 2;
+                    secondSquareX += movementX;
+                    secondSquareY += movementY;
+                    draw();
+                }else if((x >= firstSquareX && x <= (firstSquareX + widthFirstSquare))
+                &&(y >= firstSquareY && y <= (firstSquareY + heightFirstSquare))){
+                    const movementX = x - firstSquareX - widthFirstSquare / 2;
+                    const movementY = y - firstSquareY - heightFirstSquare / 2;
+                    firstSquareX += movementX;
+                    firstSquareY += movementY;
+                    draw();
+                }
+            }
+        })
+        canvas.addEventListener('mouseup', e => {
+            isDragging = false;
+        })
+    </script>
+</body>
+</html>

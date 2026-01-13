@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search_container">
+            <i class="fa-solid fa-location-dot icon"></i>
+            <input type="text" class="search_container_input" placeholder="Enter your location">
+            <button class="search_container_search">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+            </button>
+        </div>
+        <img src="images/clear.png" alt="" class="image_time none">
+        <div class="temperature none">
+            <p class="temperature_p">0
+                <span>°C</span>
+            </p>
+            <p class="wheather">Broken Clouds</p>
+            <p class="not-found">Error 404</p>
+        </div>
+        <div class="data none">
+            <div class="humidity">
+                <i class="fa-solid fa-water icon"></i>
+                <div class="humidity_txt">
+                    <p class="humidity_percentage">88%</p>
+                    <p>humidity</p>
+                </div>
+            </div>
+            <div class="windSpeed">
+                <i class="fa-solid fa-wind icon"></i>
+                <div class="windSpeed_txt">
+                    <p class="windSpeed_speed">0km/h</p>
+                    <p>Wind speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

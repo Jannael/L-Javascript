@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+}
+body{
+    background: #58c;
+    display: flex;
+    align-items: center;
+    height: 100dvh;
+}
+aside{
+    width: 60px;
+    margin-left: 20px;
+    background: #fff;
+    height: 90dvh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0;
+    background: #111;
+    color: #999;
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+aside button{
+    cursor: pointer;
+    display: none;
+    background: transparent;
+}
+aside button img{
+    filter: invert(100%);
+}
+aside nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+aside nav h3{
+    color: #ddd;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+aside nav ul{
+    width: 90%;
+}
+aside nav ul li{
+    width: 100%;
+}
+aside nav ul .wraper, 
+aside nav ul .wraper span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+aside nav ul li:not(:has(ul)){
+    margin: 5px 0 10px 0;
+}
+aside nav ul li:not(:has(ul)) a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+aside nav ul li a{
+    color: inherit;
+}
+aside nav .profile .profile-sub-ul,
+aside nav .menu .menu-sub-ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside nav .profile li ul li, 
+aside nav .menu li ul li{
+    width: 0;
+    opacity: 0;
+}
+aside nav .profile li .show-sub-ul li,
+aside nav .menu li .show-sub-ul li{
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.6s ease .3s;
+}
+aside nav .profile li ul, 
+aside nav .menu li ul{
+    height: 0;
+    padding: 0;
+    background: #333;
+    border-radius: 10px;
+    transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+aside nav .profile li .show-sub-ul,
+aside nav .menu li .show-sub-ul{
+    padding: 10px;
+    height: 107px;
+    cursor: pointer;
+}
+aside:hover {
+    width: 200px;
+}
+aside:hover nav h3{
+    opacity: 1;
+}
+aside:hover ul li span{
+    font-size: 1rem;
+}
+aside nav ul li span{
+    font-size: 0;
+    transition: font-size 0.6s ease .1s;
+}
+aside:hover ul li span svg{
+    width: 20px;
+}
+aside nav ul li span svg{
+    width: 0;
+}
+aside nav h3 {
+    opacity: 0;
+    transition: opacity 0.5s ease .2s;
+}
+.overlay{
+    width: 100%;
+    height: 100dvh;
+    position: fixed;
+    background: #2229;
+    left: -100%;
+    top: 0;
+    z-index: -10;
+    transition: left 0.1s ease-in-out;
+}
+.active{
+    color: #58c;
+}
+@media (max-width: 600px){
+    aside .btn{
+        display: block;
+        position: fixed;
+        left: 0;
+        top: calc(5dvh + 15px);
+        margin: 0 0 0 35px;
+    }
+    aside{
+        width: 200px;
+        position: fixed;
+        left: -100%;
+        transition: left 0.5s ease-in-out;
+    }
+    .show{
+        left: 5px;
+    }
+    .show .overlay{
+        left: 0;
+    }
+    aside nav ul li span{
+        font-size: 1rem;
+    }
+    aside nav ul li span svg{
+        width: 20px;
+    }
+    aside nav h3 {
+        opacity: 1;
+    }
+}

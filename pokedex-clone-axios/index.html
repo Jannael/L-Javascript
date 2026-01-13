@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="pokemon.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="title">
+            <img src="assets/pokeball.svg" alt="">
+            <h1>Pokedex</h1>
+        </div>
+        <div class="search_wrapper">
+            <img src="assets/search.svg" alt="" class="search_icon">
+            <input type="text" class="search_input" placeholder="Search">
+            <div class="filter_wrapper">
+                <img src="assets/sorting.svg" alt="" class="sort_icon">
+                <div class="filter_wrap">
+                    <p class="filter_wrapper_sortP">Sort by:</p>
+                    <div>
+                        <input
+                        type="radio"
+                        id="number"
+                        name="filters"
+                        value="number"
+                        checked
+                        />
+                        <label for="number">Number</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="name" name="filters" value="name"/>
+                        <label for="name">Name</label>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </header>
+    <main>
+    </main>   
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

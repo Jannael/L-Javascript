@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    user-select: none;
+}
+body{
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+    background: url("https://i.pinimg.com/736x/3b/03/58/3b035821ea52b0a217ee55a84575ccaa.jpg") right / cover;
+    backdrop-filter: blur(0rem);
+}
+
+.container{
+    height: 100dvh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.input_container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+    align-items: start;
+    gap: 10px;
+    height: auto;
+    justify-content: center;
+}
+.search {
+    width: 80%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    background: #3d4;
+    max-height: 40px;
+}
+.search::placeholder{
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.pokedex_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.pokedex-img{
+    width: clamp(200px, 100%, 600px);
+    height: auto;
+}
+.adjust{
+    width: clamp(200px, 100%, 600px);
+    position: relative;
+}
+.response{
+    border-radius: 20px;
+    position: absolute;
+    width: 36%;
+    height: 33%;
+    top: 27%;
+    left: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #2222;
+}
+.response_img{
+    width: 50%;
+    max-height: 60%;
+}
+.response_name{
+    color: #000;
+    text-transform: capitalize;
+}
+.left{
+    width: 5%;
+    height: 7%;
+    position: absolute;
+    top: 72%;
+    right: 32%;
+    cursor: pointer;
+    background: transparent;
+}
+
+.right{
+    width: 5%;
+    height: 7%;
+    position: absolute;
+    top: 72%;
+    right: 27%;
+    cursor: pointer;
+    background: transparent;
+}
+
+.show{
+    display: block;
+}

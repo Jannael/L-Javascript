@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <section class="section">
+        <div class="left">
+            <div class="left_container txt-sign-up">
+                <h3 class="title">Your new?</h3>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="button" onclick="signUp()">Sign up</button>
+                <img src="img/rocket.webp" alt="" class="rocket">
+            </div>
+            <form class="right_container sign-up-form none">
+                <h2 class="focus-title">Sign-up</h2>
+                <div class="input_container">
+                    <i class="fa-solid fa-user input_icon"></i>
+                    <input type="text" class="input" placeholder="Username">
+                </div>
+                <div class="input_container">
+                    <i class="fa-solid fa-envelope input_icon"></i>
+                    <input type="text" class="input" placeholder="Email">
+                </div>
+                <div class="input_container">
+                    <i class="fa-solid fa-lock input_icon"></i>
+                    <input type="text" class="input" placeholder="Password">
+                </div>
+                <button class="button-bg">Sign up</button>
+                <p class="focus_p">Sign up with social platforms</p>
+                <div class="container_icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-google"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="txt-login right_txt none">
+                <h3 class="title">One of us</h3>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="button" onclick="login()" id="">Login</button>
+                <img src="img/rocket.webp" alt="" class="rocket">
+            </div>
+            <form class="right_container login-form">
+                <h2 class="focus-title">Login</h2>
+                <div class="input_container">
+                    <i class="fa-solid fa-user input_icon"></i>
+                    <input type="text" class="input" placeholder="Username">
+                </div>
+                <div class="input_container">
+                    <i class="fa-solid fa-lock input_icon"></i>
+                    <input type="text" class="input" placeholder="Password">
+                </div>
+                <button class="button-bg">LOGIN</button>
+                <p class="focus_p">Login with social platforms</p>
+                <div class="container_icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-google"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

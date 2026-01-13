@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <title>Document</title>
+    </head>
+<body>
+    <header class="header">
+        <img src="img/logo.png" alt="logo">
+        <button class="openSidebar" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+            <img src="assets/menu.svg" alt="sibebar open icon" class="white">
+        </button>
+        <nav id="navbar" class="nav">
+            <ul>
+                <li><a href="#" aria-current="page">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Candy</a></li>
+                <li><a href="#">New</a></li>
+                <li class="ul-support"><a href="#">Support</a></li>
+                <button class="closeSidebar" onclick="closeSidebar()" aria-label="close Sidebar">
+                    <img src="assets/closeMenu.svg" alt="" class="white">
+                </button>        
+            </ul>            
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-section">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/batman-origins.png" alt="">
+                        <div class="container">
+                            <h3>#Batman arkham origins</h3>
+                            <span>"This ends tonight"</span>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia aliquam nihil hic, rerum natus aperiam quis quos optio, libero veritatis laudantium. Veniam debitis a harum eligendi fugiat voluptas magnam rem.</p>
+                        </div>                </div>
+                    <div class="swiper-slide">
+                        <img src="img/batman-asylum.png" alt="">
+                        <div class="container">
+                            <h3>#Batman arkham asylum</h3>
+                            <span>"The asylum... a twisted reflection of reality, an abyss for the criminally insane." </span>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia aliquam nihil hic, rerum natus aperiam quis quos optio, libero veritatis laudantium. Veniam debitis a harum eligendi fugiat voluptas magnam rem.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/batman-city.png" alt="">
+                        <div class="container">
+                            <h3>#Batman arkham city</h3>
+                            <span>"You of all people should know there's plenty wrong with me." </span>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia aliquam nihil hic, rerum natus aperiam quis quos optio, libero veritatis laudantium. Veniam debitis a harum eligendi fugiat voluptas magnam rem.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/batman-knight.png" alt="">
+                        <div class="container">
+                            <h3>#Batman arkham knight</h3>
+                            <span>"Let's test your theories, Mr. Wayne. Show me what you got."</span>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia aliquam nihil hic, rerum natus aperiam quis quos optio, libero veritatis laudantium. Veniam debitis a harum eligendi fugiat voluptas magnam rem.</p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="swiper-pagination"></div>
+            </div>
+                <script>
+                    let swiper = new Swiper(".swiper", {
+                        pagination: {
+                            el: ".swiper-pagination",
+                            dynamicBullets: true,
+                            clickable: true,
+                        },
+                        loop: true, 
+                        });
+                </script>    
+        </section>
+
+        <section class="first_section">
+            <div class="swiper-villians">
+                <h2>Batman villians</h2>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article>
+                            <img src="img/joker-arkham.png" alt="">
+                            <h3>Joker</h3>
+                            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, libero! Hic fugit fuga, sit animi, sequi molestias pariatur consequatur modi velit corrupti saepe delectus ab expedita illum voluptas, itaque deleniti.</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <img src="img/bane-arkham.png" alt="">
+                            <h3>Bane</h3>
+                            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, libero! Hic fugit fuga, sit animi, sequi molestias pariatur consequatur modi velit corrupti saepe delectus ab expedita illum voluptas, itaque deleniti.</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <img src="img/scarecrow-arkham.png" alt="">
+                            <h3>Scarecrow</h3>
+                            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, libero! Hic fugit fuga, sit animi, sequi molestias pariatur consequatur modi velit corrupti saepe delectus ab expedita illum voluptas, itaque deleniti.</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <script src="swiper-villian.js"></script>    
+        </section>
+
+        <section class="second_section">
+            <article>
+                <div class="text_container">
+                    <h2>Who is batman?</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sed ullam tenetur consequuntur, iste omnis distinctio magni quisquam iusto, aut eos repudiandae molestias totam repellat quod eligendi quis quasi voluptatem.</p>
+                    <button>Know more</button>
+                </div>
+                <figure>
+                    <img src="img/batman-png-moto.png" alt="">
+                </figure>
+            </article>
+        </section>
+            
+        <section class="third_section">
+            <div class="swiper-second-characters">
+                <h2>Supporting characters</h2>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="img/alfred-sc.png" alt="">
+                            </figure>
+                            <h3>Alfred Pennyworth</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ratione temporibus deleniti hic porro impedit maxime doloremque quasi asperiores natus? Rerum neque similique veritatis maxime reiciendis voluptatum, ipsa quam ea.</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="img/barbara-sc.png" alt="">
+                            </figure>
+                            <h3>Batgirl</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ratione temporibus deleniti hic porro impedit maxime doloremque quasi asperiores natus? Rerum neque similique veritatis maxime reiciendis voluptatum, ipsa quam ea.</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="img/james-gordon-sc.webp" alt="">
+                            </figure>
+                            <h3>James Gordon</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ratione temporibus deleniti hic porro impedit maxime doloremque quasi asperiores natus? Rerum neque similique veritatis maxime reiciendis voluptatum, ipsa quam ea.</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="img/gatubela-arkham-sc.png" alt="">
+                            </figure>
+                            <h3>Gatubela</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ratione temporibus deleniti hic porro impedit maxime doloremque quasi asperiores natus? Rerum neque similique veritatis maxime reiciendis voluptatum, ipsa quam ea.</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="img/nightwin-sc.png" alt="">
+                            </figure>
+                            <h3>Nightwin</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ratione temporibus deleniti hic porro impedit maxime doloremque quasi asperiores natus? Rerum neque similique veritatis maxime reiciendis voluptatum, ipsa quam ea.</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="img/redhood-sc.png" alt="">
+                            </figure>
+                            <h3>Redhood</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ratione temporibus deleniti hic porro impedit maxime doloremque quasi asperiores natus? Rerum neque similique veritatis maxime reiciendis voluptatum, ipsa quam ea.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <script src="second-characters.js"></script>
+        </section>
+
+        <section class="fourth_section">
+            <article></article>
+        </section>
+
+        <section class="fifth_section">
+            <article></article>
+            <article></article>
+            <article></article>
+        </section>
+
+        <section class="sixth_section">
+            <article></article>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+    
+    <script src="sideBar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

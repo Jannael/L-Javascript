@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+body{
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+    background: #222;
+}
+img{
+    width: clamp(50px, 100px, 150px);
+}
+#scene{
+    position: relative;
+}
+#text, #scene{
+    display: flex !important;
+    justify-content: center;
+}
+span{
+    color: #000;
+    position: relative !important;
+    display: inline-block;
+    margin: min(3%, 10px);
+    font-size: clamp(1rem, calc(8% + 4rem), 5rem);
+    text-shadow: 1px 1px 0 #e1e1e1, 2px 2px 0 #e1e1e1, 3px 3px 0 #e1e1e1, 4px 4px 0 #e1e1e1, 5px 5px 0 #e1e1e1, 6px 6px 0 #e1e1e1, 7px 7px 0 #e1e1e1, 8px 8px 0 #e1e1e1, 25px 35px 0px rgba(0, 0, 0, 0.1);
+}
+.layer{
+    position: absolute;
+    z-index: -10;
+}
+.layer-1{
+    left: 0;
+    top: -30px !important;
+}
+.layer-2{
+    left: 33% !important;
+}
+.layer-3{
+    left: 66% !important;
+}
+.layer-4{
+    left: 100% !important;
+}
+.z{
+    z-index: 10;
+}

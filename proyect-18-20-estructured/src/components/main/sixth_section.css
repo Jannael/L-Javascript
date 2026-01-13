@@ -1,0 +1,68 @@
+.sixth_section{
+    width: 100%;
+    height: 80dvh;
+    color: var(--text-color);
+}
+.sixth_section h2{
+    text-align: center;
+    font-size: calc(200% + 0rem);
+}
+.sixth_section .swiper-sixth-section{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.sixth_section .swiper-sixth-section .swiper-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sixth_section .swiper-sixth-section .swiper-wrapper .swiper-slide{
+    background: var(--primary-color);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5%;
+    width: 30%;
+}
+.sixth_section .swiper-sixth-section .swiper-wrapper .swiper-slide figure{
+    width: 100%;
+    height: 250px;
+    display: grid;
+    place-content: center;
+}
+.sixth_section .swiper-sixth-section .swiper-wrapper .swiper-slide figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px #fff9);
+}
+.sixth_section .swiper-sixth-section .swiper-wrapper .swiper-slide .price{
+    margin-top: 20px;
+    gap: 20px;
+    display: flex;
+}
+.sixth_section .swiper-sixth-section .swiper-wrapper .swiper-slide .price p:last-child{
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.sixth_section .swiper-sixth-section .swiper-pagination{
+    display: none;
+}
+@media (max-width:610px){
+    .sixth_section {
+        height: 90dvh;
+    }
+    .sixth_section .swiper-sixth-section .swiper-wrapper .swiper-slide{
+        width: 60%;
+        &.swiper-slide-active{
+            box-shadow: 0 0 10px #fff9;
+        }
+    }
+    .sixth_section .swiper-sixth-section .swiper-pagination{
+        display: block;
+    }
+}

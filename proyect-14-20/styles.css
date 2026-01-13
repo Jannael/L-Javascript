@@ -1,0 +1,226 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+}
+:root{
+    --distanceAfter: -550%;
+    --leftdistance: 0;
+    --rightdistance: -100%;
+
+    --topdistanceafter: -570%;
+    --topdistanceleft: 0;
+    --topdistanceright: -100%;
+}
+html{
+    font-size: 12px;
+}
+body{
+    height: 100dvh;
+    background: #f0f0f0;
+    display: grid;
+    place-content: center;
+}
+button{
+    cursor: pointer;
+}
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90dvw;
+    height: 100dvh;
+}
+.left {
+    width: 50%;
+    height: 100dvh;
+    position: relative;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left::after{
+    content: '';
+    display: block;
+    position: fixed;
+    width: 600%;
+    height: 600%;
+    left: var(--distanceAfter);
+    border-radius: 50%;
+    background: radial-gradient(#f21, #d54, #df5f4f);
+    z-index: 10;
+    top: -300%;
+    transition: left .5s ease;
+}
+.left_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 20;
+    opacity: 1;
+    transition: opacity 5s ease;
+}
+.title {
+    color: #fff;
+    font-size: clamp(3rem, 5rem, 6rem);
+    margin-bottom: 20px;
+}
+.text {
+    color: #fff;
+    margin: 20px 0;
+    max-width: 300px;
+    text-align: center;
+}
+.button{
+    color: #d0d0d0;
+    padding: 25px 40px;
+    background: transparent;
+    border-radius: 50px;
+    font-weight: 900;
+    border: 1px solid #d0d0d0;
+}
+.rocket{
+    width: clamp(300px, 400px, 500px);
+}
+spline-viewer{
+    width: clamp(100px, 200px, 300px);
+    height: clamp(100px, 200px, 300px);
+    background: none;
+}
+
+.right {
+    width: 50%;
+    height: 100dvh;
+    position: relative;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.right_container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+.focus-title {
+    font-size: clamp(1.5rem, 3rem, 4rem);
+    margin-bottom: 20px;
+}
+.input_container{
+    width: 80%;
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+}
+.input_icon{
+    position: absolute;
+    color: #aaa;
+    left: 30px;
+}
+.input {
+    border-radius: 30px;
+    padding: 20px 0 20px 60px;
+    width: 100%;
+    background: #dfdfdf;
+}
+.input::placeholder{
+    color: #aaa;
+    font-size: clamp(1.3rem, 1.5rem, 1.7rem);
+}
+.button-bg {
+    color: #d0d0d0;
+    padding: 25px 40px;
+    background: #d21;
+    border-radius: 50px;
+    font-weight: 900;
+}
+.focus_p {
+    margin: 20px 0;
+}
+.container_icon {
+    max-width: 500px;
+    width: 80%;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-around;
+}
+.fa-brands{
+    font-size: 1.5rem;
+    border: 1px solid #222;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.left_container{
+    position: relative;
+    left: var(--leftdistance);
+    transition: left .5s ease, top .5s ease;
+}
+.right_txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 20;
+    position: relative;
+    opacity: 1;
+    right: var(--rightdistance);
+    transition: right .5s ease, bottom .5s ease;
+}
+
+.none{
+    position: fixed;
+    opacity: 0;
+}
+
+@media screen and (max-width:800px){
+    html{
+        font-size: 10px;
+    }
+    .rocket{
+        display: none;
+    }
+    .right, .left{
+        width: 100%;
+        height: auto;
+    }
+    .left::after{
+        left: -250%;
+        top: var(--topdistanceafter);
+        transition: top .5s ease;
+    }
+    .left_container{
+        left: 0;
+        top: var(--topdistanceleft);
+    }
+    .right_txt{
+        right: 0;
+        bottom: var(--topdistanceright);
+    }
+    .button-bg {
+        padding: 15px 20px;
+    }
+    .button{
+        padding: 15px 20px;
+    }
+    .fa-brands{
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

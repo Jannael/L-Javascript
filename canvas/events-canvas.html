@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-content: center;
+        }
+        canvas{
+            width: 100vw;
+            height: 100vh;
+            background: #222;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let colorCircle = '#f56';
+
+        ctx.beginPath();
+        ctx.arc(((innerWidth / 2)), ((innerHeight / 2)), 50, 0, Math.PI * 2, false);
+        ctx.fillStyle = colorCircle;
+        ctx.fill();
+        ctx.closePath();
+
+        canvas.addEventListener('click', function(e){
+            const x = e.clientX;
+            const y = e.clientY;
+
+            const distance = Math.sqrt(Math.pow(x - (innerWidth/2), 2) + Math.pow(y - (innerHeight/2), 2));
+            const isClick = (distance < 50) ? true : false;
+
+            if(isClick){
+                colorCircle = '#3f7';
+            }else{
+                colorCircle = '#f56';
+            }
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+            ctx.beginPath();
+            ctx.arc(((innerWidth / 2)), ((innerHeight / 2)), 50, 0, Math.PI * 2, false);
+            ctx.fillStyle = colorCircle;
+            ctx.fill();
+            ctx.closePath();
+        })
+    </script>
+</body>
+</html>

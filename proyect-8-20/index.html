@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <button class="openSidebar" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="nav" id="navbar">
+        <ul class="nav_ul">
+            <button class="closeSidebar" onclick="closeSidebar()" aria-label="close Sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <li class="nav_ul_li home-li"><a class="nav_ul_li_a" href="#" aria-current="page">WORLD</a></li>
+            <li class="nav_ul_li"><a class="nav_ul_li_a" id="special" href="#">Home</a></li>
+            <li class="nav_ul_li"><a class="nav_ul_li_a" href="#">Destination</a></li>
+            <li class="nav_ul_li"><a class="nav_ul_li_a" href="#">About</a></li>
+            <li class="nav_ul_li login-li"><a class="nav_ul_li_a" href="#">contact</a></li>
+        </ul>
+        <div class="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+    </nav>
+    <main class="main">
+        <div class="left">
+            <h1 class="title">COUNTRY 1</h1>
+            <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam illo totam expedita cum reprehenderit, incidunt possimus distinctio eligendi culpa ullam placeat provident consequuntur est. Similique voluptatem exercitationem ea nobis nemo!</p>
+        </div>
+        <div class="right">
+            <button class="getLeft"> < </button>
+            <button class="getRight"> > </button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

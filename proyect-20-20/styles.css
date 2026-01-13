@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(93, 4, 177);
+    height: 100dvh;
+    color: #ddd;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    min-width: 250px;
+}
+.container h1{
+    width: 100%;
+    text-align: center;
+    font-size: calc(250% + 0rem);
+}
+.container .facebook, .container .twiter, .container .instagram{
+    width: 30%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container .follow-content svg{
+    width: 100%;
+    height: 30%;
+}
+.container .follow-content .followers{
+    font-weight: 500;
+    font-size: calc(80% + 0rem);
+}
+.container .follow-content .counter{
+    font-weight: 900;
+    font-size: calc(150% + 0rem);
+}

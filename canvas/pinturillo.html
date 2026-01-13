@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #222;
+            display: grid;
+            place-content: center;
+            height: 100dvh;
+        }
+        .container{
+            width: 80vw;
+            max-width: 1000px;
+            height: 70dvh;
+            max-height: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #444;
+            border-radius: 10px;
+            gap: 10px;
+        }
+        canvas{
+            width: 90%;
+            height: 50dvh;
+            background: #fff;
+        }
+        .container .tools{
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .container .color{
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+        .container button{
+            cursor: pointer;
+            padding: 10px 20px;
+            background: #222;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .container input[type="color"]{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas></canvas>
+        <div class="tools">
+            <button onCLick="undo_last()">Undo</button>
+            <button onClick="clean()" >Clear</button>
+
+            <div class="color" onClick="changeColor(this);" style="background-color: blue;"></div>
+            <div class="color" onClick="changeColor(this);" style="background-color: red;"></div>
+            <div class="color" onClick="changeColor(this);" style="background-color: black;"></div>
+            <div class="color" onClick="changeColor(this);" style="background-color: yellow;"></div>
+
+            <input type="color" onInput="currentColor = this.value;">
+            <input type="range" min="1" max="100" value="1" onInput="lineWidth = this.value;">
+        </div>
+    </div>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d', {willReadFrequently: true});
+    
+        canvas.width = ( ( ( innerWidth / 100 ) * 80 ) / 100 ) * 90;
+        canvas.height = ( innerHeight / 2 );
+        let isDrawing = false;
+        let lineWidth = 3;
+        let currentColor = "black";
+        let history = [];
+    
+        canvas.addEventListener('mousedown', (e) => {
+            const x = event.clientX - canvas.offsetLeft;
+            const y = event.clientY - canvas.offsetTop;
+
+            isDrawing = true;
+            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            e.preventDefault();
+            draw(e);
+        });
+        canvas.addEventListener('mousemove', (e) => {
+            e.preventDefault();
+            if(isDrawing){
+                draw(e);
+            }
+        });
+        canvas.addEventListener('mouseup', (e) => {
+            e.preventDefault();
+            if(isDrawing) {
+                draw(e);
+                isDrawing = false;
+                ctx.closePath();
+            }
+        });
+        
+        function draw(event){ 
+            const x = event.clientX - canvas.offsetLeft;
+            const y = event.clientY - canvas.offsetTop;
+
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = lineWidth;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.lineTo(x, y);
+            ctx.stroke();
+        }
+        function changeColor(el){
+            currentColor = el.style.backgroundColor;
+        }
+
+        function clean(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            history = [];
+        }
+
+        function undo_last(){
+            if(history.length > 0){
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.putImageData(history[history.length - 1], 0, 0);
+                history.pop();
+            }
+        }
+
+        canvas.addEventListener('touchDown', (e) => {
+            const x = event.clientX - canvas.offsetLeft;
+            const y = event.clientY - canvas.offsetTop;
+
+            isDrawing = true;
+            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            e.preventDefault();
+            draw(e);
+        });
+        canvas.addEventListener('touchMove', (e) => {
+            e.preventDefault();
+            if(isDrawing){
+                draw(e);
+            }
+        });
+        canvas.addEventListener('touchUp', (e) => {
+            e.preventDefault();
+            if(isDrawing) {
+                draw(e);
+                isDrawing = false;
+                ctx.closePath();
+            }
+        });
+    </script>
+</body>
+</html>

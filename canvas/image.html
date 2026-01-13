@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            display: grid;
+            place-content: center;
+        }
+        canvas{
+            background: #222;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100dvh;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const img = document.createElement('img');
+        img.src = `elementor.webp`;
+
+        img.onload = () => {
+            ctx.drawImage(img, ((innerWidth / 2) - 250), ((innerHeight / 2) - 250), 500, 500);
+        }
+    </script>
+</body>
+</html>

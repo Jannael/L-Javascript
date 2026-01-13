@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background: #222;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wave{
+    width: clamp(50px, 70px, 90px);
+    height: clamp(50px, 70px, 90px);
+    background: radial-gradient(#fff7, #fff9);
+    border-radius: 50%;
+    animation: hit 1s infinite;
+}
+.text{
+
+}
+
+
+@keyframes hit {
+    from{
+        transform: scale(0);
+        opacity: 1;
+    }
+    to{
+        transform: scale(1);
+        opacity: 0;
+    }
+}

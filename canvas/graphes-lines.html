@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            display: grid;
+            place-content: center;
+            height: 100dvh;
+        }
+        canvas{
+            width: 100%;
+            height: 100dvh;
+            background: #222;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+        const data = [
+            200,
+            150, 
+            170, 
+            600,
+            80,
+            450,
+            350,
+            200,
+            200,
+            230,
+        ]
+        
+        ctx.beginPath();
+        ctx.strokeStyle = '#fff';
+        ctx.moveTo(0, data[0]);
+
+        data.forEach((value, index) => {
+            //distance between each point to be at the long of the canvas
+            const distance = canvas.width / (data.length - 1);
+            const x = index * distance;
+            ctx.lineTo(x, data[index]);
+        })
+
+        ctx.lineTo(canvas.width, canvas.height);
+        ctx.lineTo(0, canvas.height);
+        ctx.lineTo(0, data[0]);
+        
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath()
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div id="scene">
+            <h1 id="text">
+                <span data-depth-y="5">J</span>
+                <span data-depth-y="-3">A</span>
+                <span data-depth-y="2">N</span>
+                <span data-depth-y="5">N</span>
+                <span data-depth-y="5">A</span>
+                <span data-depth-y="-5">E</span>
+                <span data-depth-y="-1">L</span>
+            </h1>
+                <div class="layer layer-1"  data-depth="1"> <img src="img/bulbasaur.png" alt=""></div>
+                <div class="layer z layer-2"  data-depth="3"> <img src="img/charmander.png" alt=""></div>
+                <div class="layer z layer-3"  data-depth="-3"> <img src="img/pikachu.png" alt=""></div>
+                <div class="layer layer-4"  data-depth="1"> <img src="img/squirtle.png" alt=""></div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

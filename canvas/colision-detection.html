@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            display: grid;
+            place-content: center;
+        }
+        canvas{
+            background: #3f7;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let xpos1 = 100;
+        let ypos1 = 100;
+        let xpos2 = 400;
+        let ypos2 = 400;
+        let speed = 5;
+        let yspeed = speed;
+        let xspeed = speed;
+        let yspeed2 = speed;
+        let xspeed2 = speed;
+        let colorSecondCircle  = '#f21';
+
+        let getDistance = function(x1, x2, y2, y1){
+            return Math.sqrt((Math.abs(x2 - x1) * Math.abs(x2 - x1)) + (Math.abs(y2 - y1) * Math.abs(y2 - y1)));
+            //its the same as say 
+            //Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        }
+        
+        const update = () => {
+            requestAnimationFrame(update);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            //circle that is moving
+            ctx.beginPath();
+            ctx.strokeStyle = '#f21';
+            ctx.fillStyle = 'red';
+            ctx.lineWidth = 5;
+            ctx.arc(xpos1, ypos1, 50, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.fill();
+            ctx.closePath();
+            
+            //border detection
+            if((xpos1 + 50) > canvas.width){
+                xspeed = -xspeed;
+            }
+            if((xpos1 - 50) < 0){
+                xspeed = -xspeed;
+            }
+            if((ypos1 + 50) > canvas.height){
+                yspeed = -yspeed;
+            }
+            if((ypos1 - 50) < 0){
+                yspeed = -yspeed;
+            }
+
+            if((xpos2 + 200) > canvas.width){
+                xspeed2 = -xspeed2;
+            }
+            if((xpos2 - 200) < 0){
+                xspeed2 = -xspeed2;
+            }
+            if((ypos2 + 200) > canvas.height){
+                yspeed2 = -yspeed2;
+            }
+            if((ypos2 - 200) < 0){
+                yspeed2 = -yspeed2;
+            }
+
+            if( getDistance(xpos1, xpos2, ypos2, ypos1) > 250 ){
+                colorSecondCircle = "red";
+            }else{
+                colorSecondCircle = "green";
+            }
+
+            //circle to colition
+            ctx.beginPath();
+            ctx.strokeStyle = colorSecondCircle;
+            ctx.fillStyle = 'red';
+            ctx.lineWidth = 5;
+            ctx.arc(xpos2, ypos2, 200, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.closePath();
+
+            xpos1 += xspeed;
+            ypos1 += yspeed;
+            xpos2 += xspeed2;
+            ypos2 += yspeed2;
+        }
+
+        update();
+    </script>
+</body>
+</html>

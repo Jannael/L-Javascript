@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+:root{
+    --identity-primary: #dc0a2d;
+}
+
+body{
+    background: var(--identity-primary);
+    width: 100%;
+    height: 100dvh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 10px;
+}
+
+.header {
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.title {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+.search_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.search_icon{
+    background: #fff;
+    position: absolute;
+    margin-left: 10px;
+}
+.search_input {
+    width: 90%;
+    height: 25px;
+    border-radius: 50px;
+    padding: 0 0 0 35px;
+}
+
+.filter_wrapper {
+    display: flex;
+    align-items: center;
+}
+.filter_wrapper_sortP {
+    
+}
+.sort_icon{
+    width: 25px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.filter_wrap {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--identity-primary);
+    padding: 10px;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+main{
+    background: #fff;
+    width: 90%;
+    max-width: 1000px;
+    height: 80dvh;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    gap: 10px;
+}
+.response{
+    width: 130px;
+    height: 130px;
+    background: linear-gradient(to top, #444, transparent, transparent);
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #222;
+    box-sizing: border-box;
+}
+.response_id{
+    color: #222;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.response_img{
+    width: 60%;
+    height: 90px;
+}
+.response_name{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.open{
+    display: block;
+}
+
+.wait{
+    width: clamp(200px, 300px, 500px);
+}
+.wait_img{
+    width: 100%;
+    height: 100%;
+    animation: spin 2s linear both infinite;
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

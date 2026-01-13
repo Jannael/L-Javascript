@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+body{
+    display: flex;
+    justify-content: end;
+}
+
+:root{
+    --bg: 'img/goku.webp';
+}
+
+.openmenu{
+    margin: 15px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav{
+    position: fixed;
+    right: -100%;
+    background: #222;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    transition: right .5s ease;
+}
+
+.show{
+    right: 0;
+}
+.left{
+    width: 50%;
+    height: 100dvh;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    transition: background .5s ease;
+}
+.left ul{
+    list-style: none;
+    font-size: clamp(1rem, 2rem, 4rem);
+    font-family: system-ui;
+}
+li{
+    cursor: pointer;
+}
+
+.right{
+    width: 50%;
+    height: 100dvh;
+    background: #f21;
+    left: 50%;
+    background: url(img/goku.webp) center / cover;
+    transition: background .5s ease;
+}
+.closemenu{
+    position: absolute;
+    right: 0;
+    margin: 15px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}

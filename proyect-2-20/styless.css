@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+}
+body{
+    background: #222;
+    display: flex;
+    height: 100dvh;
+    align-items: center;
+}
+:root{
+    --iconColor: #3f7;
+}
+.nav {
+    padding: 20px;
+    background: #ddd;
+    height: 90dvh;
+    margin: 20px;
+    border-radius: 10px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: width .5s ease;
+}
+.nav_active{
+    width: 300px ;
+}
+.nav_button {
+    font-size: clamp(1.5rem, 1.7rem, 2rem);
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+    align-self: flex-start;
+}
+
+.nav_ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70%;
+    color: #000;
+}
+.nav_ul_li {
+}
+.nav_ul_li_a{
+    text-decoration: none;
+    font-size: clamp(1.5rem, 1.7rem, 2rem);
+    display: flex;
+    color: #222;
+    position: relative;
+}
+
+.nav_ul_li_icon {
+    padding: 10px;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+    transition: right .5s ease, top .5s ease;
+}
+
+.nav_ul_li_span{
+    font-size: 0rem;
+    transition: font-size .5s ease;
+    top: 0;
+    right: 0;
+    transition: right .5s ease, top .5s ease, font-size .5s ease;
+}
+
+.sidebar_active{
+    font-size: 2rem;
+}
+
+.active_a > .nav_ul_li_span{
+    color: var(--iconColor);
+    position: relative;
+    right: -40px;
+    top: -15px;
+}
+
+.active_a > .nav_ul_li_icon{
+    background: var(--iconColor);
+    position: relative;
+    right: -30px;
+    top: -15px;
+    box-shadow: 0 0 10px var(--iconColor);
+}
+
+.purple{
+    --iconColor: #73f;
+}
+.blue{
+    --iconColor: #48e;
+}
+.green{
+    --iconColor: #3a3;
+}
+.orange{
+    --iconColor: #f73;
+}
+.yellow{
+    --iconColor: #f37;
+}

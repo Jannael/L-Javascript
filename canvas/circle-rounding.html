@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            place-content: center;
+            padding: 0;
+            margin: 0;
+            height: 100dvh;
+        }
+        canvas{
+            background: #f21;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let xpos = 100;
+        let ypos = 100;
+        let speed = 100; //px/s
+        let dx = speed;
+        let dy = speed;
+        let colapseCounter = 0;
+
+        const update = () =>{
+            requestAnimationFrame(update); //this function will animate the circle, its like setInterval but too much better 
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height); //delete the preexisting circle
+
+            //styles
+            ctx.beginPath();
+            ctx.fillStyle = '#fff';
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.font = "bold 20px Arial"; 
+            ctx.fillText(colapseCounter, xpos, ypos);
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 10;
+            ctx.arc(xpos, ypos, 50, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.closePath();
+            
+            //if ypos +50 is bigger than canvas height, its out of the canvas, so we need to reverse the direction
+            //50 because its the radius of the circle
+            if( (ypos + 50) > canvas.height ){
+                dy = -dy;
+                colapseCounter++;
+            }
+            if( (ypos - 50) < 0 ){
+                dy = -dy;
+                colapseCounter++;
+            }
+            if( (xpos + 50) > canvas.width ){
+                dx = -dx;
+                colapseCounter++;
+            }
+            if( (xpos - 50) < 0 ){
+                dx = -dx;
+                colapseCounter++;
+            }
+
+            //continue the position increment
+            xpos += dx;
+            ypos += dy;
+        }
+
+        update();
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --top-user-one: 100px;
+            --top-user-two: 100px;
+        }
+        body{
+            width: 100%;
+            height: 100dvh;
+            padding: 0;
+            margin: 0;
+            background: #222;
+        }
+        .config{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100dvh;
+            background: #3f79;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+        }
+        .config button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background: #222;
+            color: #3f7;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+        .config button:hover{
+            opacity: 0.7;
+        }
+        .ball{
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background: #3f7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        .container-1{
+            width: 100%;
+            height: 100dvh;
+        }
+        .container-1 .user{
+            position: absolute;
+            left: 10px;
+            top: var(--top-user-one);
+            width: 30px;
+            height: 100px;
+            background: #3f7;
+        }
+        .container-2{
+            width: 100%;
+            height: 100dvh;
+        }
+        .container-2 .user{
+            position: absolute;
+            right: 10px;
+            top: var(--top-user-two);
+            width: 30px;
+            height: 100px;
+            background: #3f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-1">
+        <div class="user"></div>
+    </div>
+    <div class="ball"></div>
+    <div class="config">
+        <button class="btn-One-Player">One Player</button>
+        <button class="btn-Two-Player">Two Player</button>
+    </div>
+    <script>
+        if(location.href.split("?")[1] === "2"){
+            document.querySelector(".config").style.display = "none";
+        }
+
+        const $btnTwoPlayers = document.querySelector(".btn-Two-Player");
+        const $btnOnePlayer = document.querySelector(".btn-One-Player");
+
+        $btnTwoPlayers.addEventListener("click", ()=>{
+            const $config = document.querySelector(".config");
+            $config.style.display = "none";
+            window.open(location.href.split("?")[0] + "?2", "_blank")
+        })
+        $btnOnePlayer.addEventListener("click", ()=>{
+            const $config = document.querySelector(".config");
+            $config.style.display = "none";
+        })
+
+        const currentPage = (location.href.split("?")[1]) ? location.href.split("?")[1] : "1";
+        const root = document.querySelector(":root");
+
+        const player = (currentPage === "1") ? "--top-user-one" : "--top-user-two";
+        root.style.setProperty(player, 100 + "px"); //to avoid is NaN
+
+        const container = document.querySelector(".container-1");
+        container.classList.replace("container-1", `container-${currentPage}`);
+
+        document.addEventListener("keydown", (e)=>{
+            const keyUp = (currentPage === "1") ? "w" : "ArrowUp";
+            const keyDown = (currentPage === "1") ? "s" : "ArrowDown";
+                if(e.key === keyUp){
+                    if(root.style.getPropertyValue(player) <= "0px"){
+                        root.style.setProperty(player, "0px");
+                    }else{
+                        root.style.setProperty(player, (parseInt(root.style.getPropertyValue(player)) - 10) + "px");
+                    }
+                }
+                if(e.key === keyDown){
+                    if(root.style.getPropertyValue(player).replace("px", "") >= innerHeight - 120){
+                        root.style.setProperty(player, `${innerHeight - 101}px`);
+                    }else{
+                        root.style.setProperty(player, (parseInt(root.style.getPropertyValue(player)) + 10) + "px");
+                    }
+                }
+        })
+            
+        const ball = document.querySelector(".ball");
+        ball.style.setProperty("top", innerHeight / 2 + "px");
+        ball.style.setProperty("left", innerWidth / 2 + "px");
+        let speedBallX = 10;
+        let speedBallY = 10;
+
+        function moveBall(){
+            requestAnimationFrame(moveBall);
+            if(ball.style.getPropertyValue("top").replace("px", "") >= innerHeight - 45
+                || ball.style.getPropertyValue("top").replace("px", "") <= 0){
+                speedBallY = -speedBallY;
+            }
+            if(ball.style.getPropertyValue("left").replace("px", "") >= innerWidth - 50
+                || ball.style.getPropertyValue("left").replace("px", "") <= 0){
+                speedBallX = -speedBallX;
+            }
+
+            ball.style.setProperty("top", (parseInt(ball.style.getPropertyValue("top")) + speedBallY) + "px");
+            ball.style.setProperty("left", (parseInt(ball.style.getPropertyValue("left")) + speedBallX) + "px");
+        }
+        moveBall();
+    </script>
+</body>
+</html>

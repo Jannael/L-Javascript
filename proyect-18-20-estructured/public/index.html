@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Batman Arkham Games">
+    <meta name="robots" content="nofollow noarchive noimageindex">
+    <meta name="author" content="Jannael Orlando Hernandez Macedo"> 
+    <meta name="description" content="the page its about batman games">
+    <meta name="keywords" content="Batman Arkham Origins, Batman Arkham Asylum, Batman Arkham City, Batman Arkham Knight, Batman Games">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="../src/components/header/header.css">
+    <link rel="stylesheet" href="../src/components/main/main.css">
+    <link rel="stylesheet" href="../src/components/main/second-section.css">
+    <link rel="stylesheet" href="../src/components/main/third-section.css">
+    <link rel="stylesheet" href="../src/components/main/fourth-section.css">
+    <link rel="stylesheet" href="../src/components/main/fifth_section.css">
+    <link rel="stylesheet" href="../src/components/main/sixth_section.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <img src="assets/images/logo.webp" alt="logo">
+        <button class="openSidebar" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+            <img src="assets/images/svg/menu.svg" alt="sibebar open icon" class="white" loading="lazy">
+        </button>
+        <nav id="navbar" class="nav">
+            <ul>
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#villians">Villians</a></li>
+                <li><a href="#supporting">Supporting</a></li>
+                <li><a href="#DLC">DLC</a></li>
+                <li><a href="#" class="ul-support">Support</a></li>
+            </ul>     
+            <button class="closeSidebar" onclick="closeSidebar()" aria-label="close Sidebar">
+                <img src="assets/images/svg/closeMenu.svg" alt="close side menu icon" class="white" loading="lazy">
+            </button>        
+        </nav>
+    </header>
+    <script src="../src/components/header/header.js"></script>
+
+    <main>
+        <section class="main-section" id="home">
+            <div class="swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <script src="../src/containers/main-section/object.js"></script>
+        <script src="../src/containers/main-section/main.js"></script>
+        
+        <section class="second_section" id="villians">
+            <div class="swiper-villians">
+                <h2>Batman villians</h2>
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <script src="../src/containers/second-section/object.js"></script>
+        <script src="../src/containers/second-section/second_section.js"></script>
+
+        <section class="third_section">
+            <article>
+                <div class="text_container">
+                    <h2>Who is batman?</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sed ullam tenetur consequuntur, iste omnis distinctio magni quisquam iusto, aut eos repudiandae molestias totam repellat quod eligendi quis quasi voluptatem.</p>
+                    <button>Know more</button>
+                </div>
+                <figure>
+                    <img src="assets/images/batman-png-moto.webp" alt="" loading="lazy">
+                </figure>
+            </article>
+        </section>
+
+        <section class="fourth_section" id="supporting">
+            <div class="swiper-second-characters">
+                <h2>Supporting characters</h2>
+                <div class="swiper-wrapper"></div>
+            </div>
+        </section>
+        <script src="../src/containers/fourth-section/object.js"></script>
+        <script src="../src/containers/fourth-section/fourth-section.js"></script>
+
+        <section class="fifth_section">
+            <article>
+                <figure>
+                    <img src="assets/images/steam-logo.webp" alt="" loading="lazy">
+                </figure>
+                <div class="container">
+                    <h3>Available on steam</h3>
+                    <button>Go to see</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="sixth_section" id="DLC">
+            <h2>DLC's</h2>
+            <div class="swiper-sixth-section">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="assets/images/batman-DLC1.webp" alt="" loading="lazy">
+                        </figure>
+                        <h3> First DLC</h3>
+                        <p>accesory</p>
+                        <div class="price">
+                            <p>$7.99</p>
+                            <p>$14.99</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="assets/images/batman-DLC2.webp" alt="" loading="lazy">
+                        </figure>
+                        <h3>Second DLC</h3>
+                        <p>accesory</p>
+                        <div class="price">
+                            <p>$7.99</p>
+                            <p>$14.99</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="assets/images/Batman-DLC3.webp" alt="" loading="lazy">
+                        </figure>
+                        <h3>Third DLC</h3>
+                        <p>accesory</p>
+                        <div class="price">
+                            <p>$7.99</p>
+                            <p>$14.99</p>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <script src="../src/containers/sixth-section/sixth_section.js"></script>
+    </main>
+
+    <footer>
+        
+    </footer>
+    
+    <button id="return-to-home" class="not-show" aria-label="back to main page">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+            <path d="M9 12h-3.586a1 1 0 0 1 -.707 -1.707l6.586 -6.586a1 1 0 0 1 1.414 0l6.586 6.586a1 1 0 0 1 -.707 1.707h-3.586v6h-6v-6z"></path>
+            <path d="M9 21h6"></path>
+        </svg>
+    </button>
+
+    <script src="../src/index.js"></script>
+</body>
+</html>
